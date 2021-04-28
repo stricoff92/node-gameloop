@@ -17,9 +17,9 @@ const gameloop = require('node-gameloop');
 
 // start the loop at 30 fps (1000/30ms per frame) and grab its id
 let frameCount = 0;
-const id = gameloop.setGameLoop(function(delta) {
+const id = gameloop.setGameLoop(function(loop_id, delta) {
 	// `delta` is the delta time from the last frame
-	console.log('Hi there! (frame=%s, delta=%s)', frameCount++, delta);
+	console.log('Hi there! (loop_id=%s, frame=%s, delta=%s)', loop_id, frameCount++, delta);
 }, 1000 / 30);
 
 // stop the loop 2 seconds later
